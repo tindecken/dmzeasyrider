@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.css" type="text/css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">  
+  <link rel="stylesheet" href="css/lightbox.css" type="text/css" >
+  <link rel="stylesheet" href="bxslider/jquery.bxslider.css" type="text/css" >
+  <link rel="stylesheet" href="css/styles.css" type="text/css" >  
+  <link rel="shortcut icon" href="images/favicon.ico"/>
+  <title ng-bind="$state.current.data.pageTitle + ' - DMZ Easy Rider'">DMZ Easy Rider</title>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-24127048-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+</head>
+<body>
+  <header ng-include="'templates/header.html'"></header>
+  <div class="container">
+      <!--<div ui-view="carousel"></div>-->
+      <div ui-view="contains"></div>
+  </div>
+  <footer ng-include="'templates/footer.html'"></footer>
+  <script src="app/jquery/jquery-2.1.4.min.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  <!-- Include angular.js, and angular-ui-router.js-->
+  <script src="app/angular/angular.js"></script>
+  <script src="app/angular/angular-ui-router.js"></script>
+  <script src="app/lightbox.js"></script>
+  <script src="bxslider/jquery.bxslider.min.js"></script>
+  <script src="app/app.js"></script>
+  <script>
+    lightbox.option({
+      'resizeDuration': 200,
+      'wrapAround': true,
+      'albumLabel': "Image %1 of %2"
+    })
+  </script>
+<script>
+    $('.bxslider').bxSlider({
+        mode: 'fade',
+        captions: true
+    });
+</script>
+
+</body>
+</html>
